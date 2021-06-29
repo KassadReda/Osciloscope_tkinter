@@ -1,0 +1,90 @@
+Objectifs
+=========
+Realisation d'une IHM de simulation de signaux :
+
+ - d'oscilloscope (equation de mouvement vibratoire harmonique)
+ - d'évolution de population proies-prédateurs  (equation de Lotka-Volterra)
+ - dynamique de population  (equation logistique, modèle de verhulst)
+
+en se basant sur la mise en application  d'un modele MVC :
+
+Dans un prmeier temps on implémentera un simulateur d'oscilloscope.
+
+Consignes
+=========
+
+1) Recuperer sur votre compte utilisateur ($HOME/....) dans un repertoire  :
+   - Dupond-Dupont-Oscilloscope
+si vos noms sont Dupond et Dupont, les fichiers  : 
+   - main.py
+   - utils.py
+qui se trouvent sous  le répertoire :
+   - /home/TP/modules/sujets/CAI/TkInter/Simulators
+
+2) A la fin de CHAQUE seance de labo (17:30 au plus tard)
+   - créer l'archive Dupond-Dupont-Oscilloscope.tgz en lançant la commande :
+         tar zcvf Dupond-Dupont-Oscilloscope.tgz Dupond-Dupont-Oscilloscope/
+   - deposer cette archive de version : 
+          cp Dupond-Dupont-Oscilloscope.tgz /home/TP/TPrendu/nedelec/CAI/TkInter
+
+3) Avant de deposer l'archive, VERIFIER qu'elle n'est pas vide et qu'elle contient les  fichiers :
+
+     - controls.py
+     - generator.py    
+     - observer.py
+     - main.py
+     - TODO.txt
+     - utils.py
+     - screen.py
+
+   en lançant la commande : tar ztvf Dupond-Dupont-Oscilloscope.tgz
+
+Premiere version : paramétrage d'un signal
+==========================================
+Affichage et contrôle d'un signal (X) dans l'application (main.py) :
+ 1) décomposer la classe Screen de l'application principale (main.py) suivant le modèle MVC :
+      - modèle : classe Generator (generator.py)
+      - vue  : classe Screen  (generator.py)
+      - modèle : classe Generator (screen.py)
+      - controleur : classe Controller (controls.py)
+ 2) contrôler le signal, par des sliders, en amplitude,frequence, phase  (controls.py)
+ 3) contrôler le nombre d'harmoniques du signal par un sliders (controls.py)
+ 4) contrôler les harmoniques paires, impaires par des boutons à comportement radio (controls.py)
+ 5) agencer la vue et les contrôleurs dans des conteneurs ({\tt Frame}))
+ 6) réagencer automatiquement les composants graphiques en cas de retaillage de la fenetre
+ 7) configurer l'IHM (couleur,texte, positionnement des sliders ...) par un fichier d'options 
+ 8) animation d'un spot correspondant a l'elongation
+
+
+Deuxieme version : Gestion de barre de Menu
+===========================================
+1) Menu d'aide :
+   - About Us : Boite d'information avec (Nom,Prénom, e-mail)  des concepteurs de l'application
+   - About Tk : Boite d'information (remerciement) pour l'API utilisée pour développer l'IHM
+   - About Python : Boite d'information sur la langage utilisé pour développer l'IHM
+
+2) Menu de gestion de fichiers :
+   - Exit : sortie d'applciation
+      a) sans avertir l'utilisateur
+      b) avec boite de dialogue
+   - Open : chargement des parametres de signaux
+      a) chargement d'un nom de fichier fixé par defaut dans l'application
+      b) en utilisant une boite de dialogue pour sélectionner le nom de fichier
+   - Save : sauvegarde des parametres de signaux
+      a) dans un nom de fichier fixé par defaut dans l'application
+      b) en utilisant une boite de dialogue pour sélectionner le nom de fichier
+   - Save Image : sauvegarde de l'affichage ({\tt Canvas}) dans un fichier (format png, jpg ...)
+     a) dans un nom de fichier fixé par defaut dans l'application
+     b) en utilisant une boite de dialogue pour sélectionner le répertoire et le nom de fihier
+ 
+Troisieme version : Gestion de plusieurs signaux 
+================================================
+ 1) gestion d'un deuxième signal (Y) dans la même vue
+ 2) gestion d'affichage des signaux en mode (X,Y, X-Y)
+ 3) animation de spot sur la courbe X-Y
+
+Reutilisation
+=============
+Reprendre la même IHM en l'adaptant aux autres  modeles (Lotka-Volterra,Verhulst)
+
+
