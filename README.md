@@ -1,4 +1,4 @@
-# Le sujet de ce projet est le  : 
+# Le sujet de ce projet  : 
 >  Création d'une IHM afin de simuler un oscilloscope en utilisant la librairie Tkinter.
 >  Pour plus de détails : TODO.txt
 
